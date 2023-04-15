@@ -1,0 +1,305 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #EEE;
+	/*ページ全体の背景色*/
+	color: #111;
+	/*文字色*/
+}
+
+#src_form,
+#status,
+#abl,
+#basedata {
+	text-align: left;
+}
+
+.strings {
+	width: 300px;
+	background-color: #FFF;
+	white-space: nowrap;
+	text-align: center;
+	overflow: hidden;
+}
+
+table th,
+.num {
+	width: 40px;
+	background-color: #FFF;
+	white-space: nowrap;
+	text-align: right;
+}
+
+.nump {
+	width: 45px;
+	background-color: #FFF;
+	white-space: nowrap;
+	text-align: right;
+}
+
+.enum {
+	width: 120px;
+	background-color: #FFF;
+	white-space: nowrap;
+	text-align: center;
+}
+
+.dice {
+	width: 70px;
+	background-color: #FFF;
+	white-space: nowrap;
+	text-align: center;
+}
+
+span.form {
+	display: inline-block;
+}
+
+.pcname,
+.job {
+	display: inline-block;
+	position: relative;
+}
+
+.cr_block {
+
+	display: inline-block;
+	position: relative;
+	text-align: left;
+	padding-right: 10px;
+}
+
+table#status tr {
+	display: inline-block;
+	text-align: left;
+}
+
+table#abl tr {
+	display: inline-block;
+	text-align: left;
+}
+
+colgroup.head {
+	width: 40px;
+}
+
+colgroup.body {
+	width: calc(100% - 50px);
+}
+
+table#equip tr {
+	text-align: left;
+}
+
+table#equip td {
+	display: inline-block;
+	margin: 1px;
+}
+
+table#belongings tr {
+	text-align: left;
+}
+
+tr#items td {
+	display: inline-block;
+	margin: 1px;
+}
+
+table#skills {
+	text-align: left;
+}
+
+table#skills tr {
+	display: inline-block;
+	text-align: left;
+}
+
+table#skills td.nump {
+	text-align: center;
+}
+
+div.skillWrap {
+	text-align: left;
+	font-size: 76%;
+	white-space: normal;
+	border: solid 2px #222;
+	background: #FFF;
+	height: auto;
+	min-height: 300px;
+	width: 330px;
+	pointer-events: none;
+	position: absolute;
+	display: none;
+	z-index: 2;
+}
+
+h3.skillTitle {
+	color: #fff;
+	background-color: #222;
+	padding: 5px;
+}
+
+ul.skillTags {
+	color: #fff;
+	background-color: #222;
+	padding: 0 5px 5px 5px;
+}
+
+ul.skillTags li {
+	display: inline-block;
+}
+
+ul.skillTags li.skillType {
+	border: solid 1px #fff;
+	letter-spacing: 0.8em;
+	padding: 0 0 0 0.8em;
+}
+
+ul.skillTags li.skillTag {
+	border: solid 1px #fff;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	background-color: #fff;
+	color: #000;
+	margin: 0 1px;
+	padding: 1px 3px 0 3px;
+	font-size: 11px;
+}
+
+div.skillTh {
+	display: inline-block;
+	margin: 5px 0 0 5px;
+	padding: 0 3px;
+	border: solid 1px #666;
+	background-color: #666;
+	color: #ffffff;
+	min-width: 40px;
+	text-align: center;
+}
+
+div.skillTh2 {
+	display: inline-block;
+	margin: 5px 0 0 5px;
+	padding: 0 3px;
+	border: solid 1px #666;
+	background-color: #666;
+	color: #ffffff;
+	min-width: 70px;
+	text-align: center;
+}
+
+div.skillTd {
+	display: inline-block;
+	margin: 5px 0 0 0;
+	border: solid 1px #666;
+	padding: 0 3px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 5px;
+	min-width: 100px;
+}
+
+div.skillTd2 {
+	display: inline-block;
+	margin: 5px 0 0 0;
+	border: solid 1px #666;
+	padding: 0 3px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 5px;
+	min-width: 70px;
+}
+
+hr.skillHr {
+	border: none;
+	border-top: dotted 1px #666;
+	height: 1px;
+	color: #FFFFFF;
+	margin: 5px;
+}
+
+.skill_tr {
+	position: relative;
+}
+
+p.skillFunction {
+	margin: 8px 5px;
+}
+
+span.itemRank {
+	font-size: 11px;
+}
+
+.item:hover div.skillWrap {
+	display: block;
+}
+
+.skill_tr:hover div.skillWrap {
+	display: block;
+	right: 0px;
+	top: 100%;
+}
+
+td.nameWrap {
+	text-align: left;
+	white-space: normal;
+	border: solid 1px #555;
+	background: #fff;
+	padding: 1px 10px;
+	height: auto;
+	min-height: 300px;
+	width: 90vw;
+	max-width: 960px;
+	pointer-events: none;
+	position: absolute;
+	display: none;
+	top: 100%;
+	z-index: 2;
+}
+
+tr.pcname:hover td.nameWrap {
+	display: block;
+}
+
+#wrapname {
+	font-weight: bold;
+}
+
+#wrapplay {
+	font-size: 90%;
+}
+
+#wraptag li {
+	font-size: 80%;
+	display: inline-block;
+	border: solid 1px #222;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	background-color: #eee;
+	color: #000;
+	margin: 0px 1px;
+	padding: 1px 3px 0 3px;
+}
+
+#wrapremark {
+	font-size: 80%;
+	letter-spacing: 0.1em;
+	line-height: 1.25em;
+	display: inline-block;
+}
+
+div.info {
+
+	line-height: 1.5em;
+}
