@@ -17,7 +17,7 @@ function Test() {
 
 function TranslateToZh() {
     //skill
-    let translateKeys = ["name","timing", "roll","target","range","cost","limit"];
+    let translateKeys = ["name","timing","roll","target","range","cost","limit","function","explain"];
     for (let i = 0; i < currentData["skills"].length; i++) {
         let skill = currentData["skills"][i];
         if (skill) {
