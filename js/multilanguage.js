@@ -1,18 +1,24 @@
 var zhPath = "./data/zh/";
 var itemFileName = "items.json";
 var skillFileName = "skills.json";
+var basicActionFileName = "basicActions.json";
 
 
 var zhItemDict = {};
 var zhSkillDict = {};
+var zhBasicActionDict = {};
 
 function Test() {
     TranslateToZh();
 
     let skillData = GetSkillData(503);
+    let  = GetBasicActionData(1);
+    
+    console.log(zhBasicActionDict);
+    console.log(basicSkillData);
 
-    console.log(zhSkillDict);
-    console.log(skillData);
+    currentData["skills"].push(basicSkillData);
+    Refresh();
 };
 
 function TranslateToZh() {
@@ -85,6 +91,16 @@ function GetItemData(itemID) {
 
     if (itemID in zhItemDict) {
         return zhItemDict[itemID];
+    }
+
+    return null;
+}
+
+function GetBasicActionData(ationID) {
+    readTranslataionJSON(zhPath, basicActionFileName, "basicActions", zhBasicActionDict);
+
+    if (ationID in zhBasicActionDict) {
+        return zhBasicActionDict[ationID];
     }
 
     return null;

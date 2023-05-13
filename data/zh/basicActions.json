@@ -1,0 +1,4 @@
+{"basicActions":[
+    {"job_type":"共通","type":"基本動作","name":"跑","skill_rank":1,"skill_max_rank":1,"timing":"移動動作","roll":"無判定","target":"自身","range":"至近","cost":"－","post":"Book1","limit":"－","tags":["移動"],
+      "function":"你可進行【移動力】Ｓｑ的［通常移動］。","explain":"","id":1}
+]}    
