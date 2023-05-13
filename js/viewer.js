@@ -3,6 +3,7 @@ var tmpdata;
 var currentData;
 var isIgnoreMostExpensiveItem = new Boolean(false);
 var isIgnoreInitialItem = new Boolean(false);
+var isShowBasicAction = new Boolean(false);
 var ignoreList = [];
 
 function OnIsIgnoreMostExpensiveItemToggle() {
@@ -11,9 +12,11 @@ function OnIsIgnoreMostExpensiveItemToggle() {
 function OnIsIgnoreInitialItemToggle() {
 	Refresh();
 }
+function OnIsShowBasicActionToggle() {
+	Refresh();
+}
 
-function Refresh()
-{
+function Refresh() {
 	if (currentData != null) {
 		datafill(currentData);
 	}
@@ -21,9 +24,8 @@ function Refresh()
 
 function openjson() {
 	let url_id = document.getElementById("sheet_id").value;
-	if(url_id === "test")
-	{
-		document.getElementById("testBtn").style.display = "block";		
+	if (url_id === "test") {
+		document.getElementById("testBtn").style.display = "block";
 		return;
 	}
 	let request = new XMLHttpRequest();
@@ -125,6 +127,7 @@ function datafill(chardata) {
 	try {
 		isIgnoreMostExpensiveItem = document.getElementById("isIgnoreMostExpensiveItem").checked;
 		isIgnoreInitialItem = document.getElementById("isIgnoreInitialItem").checked;
+		isShowBasicAction = document.getElementById("isShowBasicAction").checked;
 		// JSONデータを出力したいHTML要素を指定
 		let keys = ["name", "character_rank", "main_job", "sub_job", "race",
 			"max_hitpoint", "effect", "action", "move", "range", "heal_power",
@@ -196,6 +199,20 @@ function datafill(chardata) {
 		});
 		if (emp > 0) {
 			document.getElementById("skill_block").insertAdjacentHTML('beforeend', '<tr><td>空きスロット:' + emp + '</td></tr>');
+		}
+		if (isShowBasicAction == true) {
+			//暫定顯示
+			readTranslataionJSON("./data/jp/", basicActionFileName, "basicActions", testBasicActionDict);
+			let i = 0;
+			for (let key in testBasicActionDict) {
+				let actioinData = testBasicActionDict[key];
+				if (actioinData != null) {
+					let line = '<tr class="skill_tr" id="basicAction_' + i + '"><td class="strings">' + actioinData["name"] + write_skill(actioinData) + '</td> <td class="enum">' + actioinData["timing"]
+						+ '</td> <td class="nump">' + actioinData["skill_rank"] + '/' + actioinData["skill_max_rank"] + '</td></tr> '
+					document.getElementById("skill_block").insertAdjacentHTML('beforeend', line);
+				}
+				i++;
+			}
 		}
 		currentData = structuredClone(chardata);
 	}

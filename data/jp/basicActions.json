@@ -11,7 +11,7 @@
       "function":"対象に［【攻撃力】＋１Ｄ］の物理ダメージを与える。","explain":"","id":5},
     {"job_type":"共通","type":"基本動作","name":"基本魔法攻撃","skill_rank":1,"skill_max_rank":1,"timing":"メジャー","roll":"対決（命中／抵抗）","target":"単体","range":"4Sq","cost":"－","post":"Book1","limit":"－","tags":["魔法攻撃","杖","魔石"],
       "function":"対象に［【魔力】＋１Ｄ］の魔法ダメージを与える。","explain":"","id":6},
-    {"job_type":"共通","type":"基本動作","name":"異常探知","skill_rank":1,"skill_max_rank":1,"timing":"セットアップ","roll":"基本（知覚／探知難易度）","target":"広範囲20（無差別）","range":"至近","cost":"－","post":"Book1","limit":"－","tags":[],
+    {"job_type":"共通","type":"基本動作","name":"異常探知","skill_rank":1,"skill_max_rank":1,"timing":"セットアップ","roll":"基本（知覚／探知難易度）","target":"広範囲20(無差別)","range":"至近","cost":"－","post":"Book1","limit":"－","tags":[],
       "function":"【探知難易度】を持つ範囲内すべての存在を対象とする。\n対象の［隠蔽］状態および［隠密］状態は解除される。\nあなたの味方に対しては、解除する効果を適用しなくてもよい。","explain":"","id":7},
     {"job_type":"共通","type":"基本動作","name":"エネミー識別","skill_rank":1,"skill_max_rank":1,"timing":"セットアップ","roll":"基本（知識／識別難易度）","target":"単体","range":"20Sq","cost":"－","post":"Book1","limit":"－","tags":[],
       "function":"【識別難易度】を持つキャラクターを対象とする。\n対象は［識別済］状態となる。","explain":"","id":8},
