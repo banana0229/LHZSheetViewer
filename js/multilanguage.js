@@ -12,18 +12,28 @@ function Test() {
     TranslateToZh();
 
     let skillData = GetSkillData(503);
-    let basicSkillData = GetBasicActionData(1);
-    
-    console.log(zhBasicActionDict);
-    console.log(basicSkillData);
+    let basicActionData = GetBasicActionData(1);
 
-    currentData["skills"].push(basicSkillData);
+    console.log(zhBasicActionDict);
+    console.log(basicActionData);
+
     Refresh();
+
+    let i = 0;
+    for (let key in zhBasicActionDict) {
+        let actioinData = zhBasicActionDict[key];
+        if (actioinData != null) {
+            let line = '<tr class="skill_tr" id="basicAction_' + i + '"><td class="strings">' + actioinData["name"] + write_skill(actioinData) + '</td> <td class="enum">' + actioinData["timing"]
+                + '</td> <td class="nump">' + actioinData["skill_rank"] + '/' + actioinData["skill_max_rank"] + '</td></tr> '
+            document.getElementById("skill_block").insertAdjacentHTML('beforeend', line);
+        }
+        i++;
+    }
 };
 
 function TranslateToZh() {
     //skill
-    let translateKeys = ["name","timing","roll","target","range","cost","limit","function","explain"];
+    let translateKeys = ["name", "timing", "roll", "target", "range", "cost", "limit", "function", "explain"];
     for (let i = 0; i < currentData["skills"].length; i++) {
         let skill = currentData["skills"][i];
         if (skill) {
