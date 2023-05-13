@@ -1,7 +1,6 @@
 var Database = {};
 var tmpdata;
 var currentData;
-var tmpcr = "";
 var isIgnoreMostExpensiveItem = new Boolean(false);
 var isIgnoreInitialItem = new Boolean(false);
 var ignoreList = [];
@@ -39,7 +38,6 @@ function openjson() {
 		datafill(tmpdata);
 		document.getElementById("view_char").value = "";
 		document.getElementById("tmp_char").label = "ID:" + document.getElementById("sheet_id").value;
-		tmpcr = "";
 		select_char();
 	}
 }
@@ -59,7 +57,7 @@ function savejson() {
 		Database[key] = {};
 	}
 	if (tmpdata) {
-		tmpcr = "CR:" + tmpdata["character_rank"]
+		let tmpcr = "CR:" + tmpdata["character_rank"]
 		Database[key][tmpcr] = tmpdata;
 		update_list();
 		document.getElementById("view_char").value = key;
@@ -89,8 +87,9 @@ function select_char() {
 			str_list += '<option value="' + key2 + '" label="' + key2 + '"></option>\n'
 		});
 	}
+	let crOptions = document.getElementById("cr_list").options;
 	document.getElementById("cr_list").innerHTML = str_list;
-	document.getElementById("cr_list").value = tmpcr;
+	document.getElementById("cr_list").value = crOptions.length > 0 ? crOptions[crOptions.length - 1].value : "";
 	select_cr();
 }
 
