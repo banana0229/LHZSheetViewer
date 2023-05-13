@@ -7,6 +7,7 @@ var basicActionFileName = "basicActions.json";
 var zhItemDict = {};
 var zhSkillDict = {};
 var zhBasicActionDict = {};
+var testBasicActionDict = {};
 
 function Test() {
     TranslateToZh();
@@ -17,11 +18,13 @@ function Test() {
     console.log(zhBasicActionDict);
     console.log(basicActionData);
 
+    readTranslataionJSON("./data/jp/", basicActionFileName, "basicActions", testBasicActionDict);
+
     Refresh();
 
     let i = 0;
-    for (let key in zhBasicActionDict) {
-        let actioinData = zhBasicActionDict[key];
+    for (let key in testBasicActionDict) {
+        let actioinData = testBasicActionDict[key];
         if (actioinData != null) {
             let line = '<tr class="skill_tr" id="basicAction_' + i + '"><td class="strings">' + actioinData["name"] + write_skill(actioinData) + '</td> <td class="enum">' + actioinData["timing"]
                 + '</td> <td class="nump">' + actioinData["skill_rank"] + '/' + actioinData["skill_max_rank"] + '</td></tr> '
