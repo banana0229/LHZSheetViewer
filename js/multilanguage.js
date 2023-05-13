@@ -12,7 +12,7 @@ function Test() {
     TranslateToZh();
 
     let skillData = GetSkillData(503);
-    let  = GetBasicActionData(1);
+    let basicSkillData = GetBasicActionData(1);
     
     console.log(zhBasicActionDict);
     console.log(basicSkillData);
