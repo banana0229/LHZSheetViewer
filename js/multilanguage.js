@@ -152,13 +152,17 @@ function GetBasicActionData(ationID) {
 function GetPrefixedEffectID(prefixedEffect) {
     readTranslataionJSON(jpPath, prefixedEffectFileName, "prefixed_effects", jpPrefixedEffectDict);
 
-    Object.entries(jpPrefixedEffectDict).forEach(([k,v]) => {
+    let id = 0;
+    Object.entries(jpPrefixedEffectDict).every(([k,v]) => {
+        console.log(v);
         if(v["function"] === prefixedEffect){
-            return k;
+            id = k;
+            return false;
         }
+        return true;
     })
-
-    return null;
+    
+    return id;
 }
 
 function GetPrefixedEffectData(prefixedEffectID) {
