@@ -70,6 +70,13 @@ function TranslateToZh() {
                     item["name"] = zhItemData["name"]
                     item["tags"] = zhItemData["tags"]
                 }
+                else{
+                    let prefixedEffectID = GetPrefixedEffectID(item["prefix_function"])
+                    if(prefixedEffectID != 0){
+                        let zhprefixedEffectData = GetPrefixedEffectData(prefixedEffectID)
+                        item["prefix_function"] = zhprefixedEffectData
+                    }
+                }
 
                 translateKeys.forEach(key => {
                     item[key] = zhItemData[key];
@@ -91,6 +98,13 @@ function TranslateToZh() {
                     }
                     item["name"] = zhItemData["name"]
                     item["tags"] = zhItemData["tags"]
+                }
+                else{
+                    let prefixedEffectID = GetPrefixedEffectID(item["prefix_function"])
+                    if(prefixedEffectID != 0){
+                        let zhprefixedEffectData = GetPrefixedEffectData(prefixedEffectID)
+                        item["prefix_function"] = zhprefixedEffectData
+                    }
                 }
 
                 translateKeys.forEach(key => {
@@ -154,7 +168,6 @@ function GetPrefixedEffectID(prefixedEffect) {
 
     let id = 0;
     Object.entries(jpPrefixedEffectDict).every(([k,v]) => {
-        console.log(v);
         if(v["function"] === prefixedEffect){
             id = k;
             return false;
