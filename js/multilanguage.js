@@ -49,7 +49,7 @@ function TranslateToZh() {
     }
 
     //item
-    translateKeys = ["type", "range", "timing", "target", "roll", "function", "tags","recipe"];
+    translateKeys = ["type", "range", "timing", "target", "roll", "function","recipe"];
     for (let i = 0; i < currentData["items"].length; i++) {
         let item = currentData["items"][i];
         if (item) {
@@ -60,6 +60,7 @@ function TranslateToZh() {
                         item["alias"] = zhItemData["alias"]
                     }
                     item["name"] = zhItemData["name"]
+                    item["tags"] = zhItemData["tags"]
                 }
 
                 translateKeys.forEach(key => {
@@ -68,7 +69,7 @@ function TranslateToZh() {
             }
         }
     }
-    
+
     //equipment
     var equipmentKeys = ["hand1", "hand2", "armor", "support_item1", "support_item2", "support_item3", "bag"];
     equipmentKeys.forEach(equipmentKey => { 
@@ -81,6 +82,7 @@ function TranslateToZh() {
                         item["alias"] = zhItemData["alias"]
                     }
                     item["name"] = zhItemData["name"]
+                    item["tags"] = zhItemData["tags"]
                 }
 
                 translateKeys.forEach(key => {
