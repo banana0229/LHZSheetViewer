@@ -74,7 +74,7 @@ function TranslateToZh() {
                     let prefixedEffectID = GetPrefixedEffectID(item["prefix_function"])
                     if(prefixedEffectID != 0){
                         let zhprefixedEffectData = GetPrefixedEffectData(prefixedEffectID)
-                        item["prefix_function"] = zhprefixedEffectData
+                        item["prefix_function"] = zhprefixedEffectData["function"]
                     }
                 }
 
@@ -103,7 +103,7 @@ function TranslateToZh() {
                     let prefixedEffectID = GetPrefixedEffectID(item["prefix_function"])
                     if(prefixedEffectID != 0){
                         let zhprefixedEffectData = GetPrefixedEffectData(prefixedEffectID)
-                        item["prefix_function"] = zhprefixedEffectData
+                        item["prefix_function"] = zhprefixedEffectData["function"]
                     }
                 }
 
