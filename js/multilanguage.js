@@ -1,12 +1,16 @@
 var zhPath = "./data/zh/";
+var jpPath = "./data/jp/";
 var itemFileName = "items.json";
 var skillFileName = "skills.json";
 var basicActionFileName = "basicActions.json";
+var prefixedEffectFileName = "prefixed_effects.json";
 
+var jpPrefixedEffectDict = {};
 
 var zhItemDict = {};
 var zhSkillDict = {};
 var zhBasicActionDict = {};
+var zhPrefixedEffectDict = {};
 var testBasicActionDict = {};
 
 function Test() {
@@ -14,9 +18,10 @@ function Test() {
     
     let basicActionData = GetBasicActionData(1);
 
-    console.log(zhBasicActionDict);
-    console.log(basicActionData);
-
+    //console.log(zhBasicActionDict);
+    //console.log(basicActionData);
+    let testEffectID = GetPrefixedEffectID("〔起動：判定直後〕この武器による［武器攻撃］、もしくはあなたの［魔法攻撃］の［命中判定］のダイスに６の出目が１つ以上あれば、判定をクリティカルにする。シナリオ１回使用可能。")
+    console.log(testEffectID);
     readTranslataionJSON("./data/jp/", basicActionFileName, "basicActions", testBasicActionDict);
 
     Refresh();
@@ -137,6 +142,18 @@ function GetBasicActionData(ationID) {
     if (ationID in zhBasicActionDict) {
         return zhBasicActionDict[ationID];
     }
+
+    return null;
+}
+
+function GetPrefixedEffectID(prefixedEffect) {
+    readTranslataionJSON(jpPath, prefixedEffectFileName, "prefixed_effects", jpPrefixedEffectDict);
+
+    Object.entries(jpPrefixedEffectDict).forEach(([k,v]) => {
+        if(v["function"] === prefixedEffect){
+            return k;
+        }
+    })
 
     return null;
 }
