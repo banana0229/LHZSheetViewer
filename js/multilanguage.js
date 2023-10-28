@@ -22,6 +22,9 @@ function Test() {
     //console.log(basicActionData);
     let testEffectID = GetPrefixedEffectID("〔起動：判定直後〕この武器による［武器攻撃］、もしくはあなたの［魔法攻撃］の［命中判定］のダイスに６の出目が１つ以上あれば、判定をクリティカルにする。シナリオ１回使用可能。")
     console.log(testEffectID);
+    let zhEffectData = GetPrefixedEffectData(testEffectID)
+    console.log(zhEffectData["name"]);
+    console.log(zhEffectData["function"]);
     readTranslataionJSON("./data/jp/", basicActionFileName, "basicActions", testBasicActionDict);
 
     Refresh();
@@ -154,6 +157,16 @@ function GetPrefixedEffectID(prefixedEffect) {
             return k;
         }
     })
+
+    return null;
+}
+
+function GetPrefixedEffectData(prefixedEffectID) {
+    readTranslataionJSON(zhPath, prefixedEffectFileName, "prefixed_effects", zhPrefixedEffectDict);
+
+    if (prefixedEffectID in zhPrefixedEffectDict) {
+        return zhPrefixedEffectDict[prefixedEffectID];
+    }
 
     return null;
 }
