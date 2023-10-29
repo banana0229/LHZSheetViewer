@@ -52,6 +52,8 @@ function TranslateToZh() {
                 translateKeys.forEach(key => {
                     skill[key] = zhSkillData[key];
                 });
+                let tags = [...zhSkillData["tags"]]
+                skill["tags"] = tags
             }
         }
     }
@@ -68,7 +70,8 @@ function TranslateToZh() {
                         item["alias"] = zhItemData["alias"]
                     }
                     item["name"] = zhItemData["name"]
-                    item["tags"] = zhItemData["tags"]
+                    let tags = [...zhItemData["tags"]]
+                    item["tags"] = tags
                 }
                 else{
                     let prefixedEffectID = GetPrefixedEffectID(item["prefix_function"])
@@ -79,9 +82,10 @@ function TranslateToZh() {
                             item["alias"] = zhprefixedEffectData["name"] + zhItemData["alias"]
                         }
                         item["name"] = zhprefixedEffectData["name"] + zhItemData["name"]
-                        item["tags"] = zhItemData["tags"]
+                        let tags = [...zhItemData["tags"]]
                         let mgTag = "M"+zhprefixedEffectData["rank"]
-                        item["tags"].push(mgTag)
+                        tags.push(mgTag)
+                        item["tags"] = tags
                     }
                 }
 
@@ -104,7 +108,8 @@ function TranslateToZh() {
                         item["alias"] = zhItemData["alias"]
                     }
                     item["name"] = zhItemData["name"]
-                    item["tags"] = zhItemData["tags"]
+                    let tags = [...zhItemData["tags"]]
+                    item["tags"] = tags
                 }
                 else{
                     let prefixedEffectID = GetPrefixedEffectID(item["prefix_function"])
@@ -115,9 +120,10 @@ function TranslateToZh() {
                             item["alias"] = zhprefixedEffectData["name"] + zhItemData["alias"]
                         }
                         item["name"] = zhprefixedEffectData["name"] + zhItemData["name"]
-                        item["tags"] = zhItemData["tags"]
+                        let tags = [...zhItemData["tags"]]
                         let mgTag = "M"+zhprefixedEffectData["rank"]
-                        item["tags"].push(mgTag)
+                        tags.push(mgTag)
+                        item["tags"] = tags
                     }
                 }
 
