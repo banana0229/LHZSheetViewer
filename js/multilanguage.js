@@ -75,6 +75,13 @@ function TranslateToZh() {
                     if(prefixedEffectID != 0){
                         let zhprefixedEffectData = GetPrefixedEffectData(prefixedEffectID)
                         item["prefix_function"] = zhprefixedEffectData["function"]
+                        if (item["name"] === item["alias"]) {
+                            item["alias"] = zhprefixedEffectData["name"] + zhItemData["alias"]
+                        }
+                        item["name"] = zhprefixedEffectData["name"] + zhItemData["name"]
+                        item["tags"] = zhItemData["tags"]
+                        let mgTag = "M"+zhprefixedEffectData["rank"]
+                        item["tags"].push(mgTag)
                     }
                 }
 
