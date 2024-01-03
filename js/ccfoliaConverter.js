@@ -101,7 +101,7 @@ function ConvertToCcfolia() {
 		/*最大HP */
 
 		paramsArray.push({"label": "最大HP",
-		"value": currentData["max_hitpoint"],})
+		"value": currentData["max_hitpoint"].toString(),})
 
 		let keys = ["character_rank/CR", "physical_defense/物防", "magic_defense/魔防",
 			"str_value/STR", "dex_value/DEX", "pow_value/POW", "int_value/INT"];
@@ -264,7 +264,7 @@ function copyToClipboard(text) {
 }
 
 function ConvertToBCDiceCommand(command) {
-	let diceRegex = /^((\d+\+)*)((\d+)[d|D]6?)(\+((\d\+?)*\d))?$/;
-	let bcdiceCommand = command.replace(diceRegex, "$4LH+$1$6");
+	let diceRegex = /^((\d(\+\d+)*)\+)?((\d+)[d|D]6?)(\+((\d\+?)*\d))?$/;
+	let bcdiceCommand = command.replace(diceRegex, "$5LH+$2$6");
 	return bcdiceCommand;
 }
