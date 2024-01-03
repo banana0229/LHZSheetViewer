@@ -192,6 +192,7 @@ function ConvertToCcfolia() {
 		commands = commands.concat(":HP-0 @-HP\n");
 		commands = commands.concat(":疲勞+0 @+疲勞\n");
 		commands = commands.concat(":疲勞-0 @-疲勞\n");
+		commands = commands.concat(":障壁=0 @指定障壁\n");
 		commands = commands.concat(":障壁+0 @+障壁\n");
 		commands = commands.concat(":障壁-0 @-障壁\n");
 		commands = commands.concat(":因果力+0 @+因果力\n");
