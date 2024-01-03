@@ -98,6 +98,11 @@ function ConvertToCcfolia() {
 	{
 		let paramsArray = Array();
 
+		/*最大HP */
+
+		paramsArray.push({"label": "最大HP",
+		"value": currentData["max_hitpoint"],})
+
 		let keys = ["character_rank/CR", "physical_defense/物防", "magic_defense/魔防",
 			"str_value/STR", "dex_value/DEX", "pow_value/POW", "int_value/INT"];
 
@@ -138,7 +143,7 @@ function ConvertToCcfolia() {
 
 	}
 
-	/* 角度 angle ※因為不好取得，所以保持預設 */
+	/* 角度 angle */
 	{
 
 	}
@@ -218,8 +223,21 @@ function ConvertToCcfolia() {
 		});
 
 		commands = commands.concat("2LH+{STR}　STR判定\n2LH+{DEX}　DEX判定\n2LH+{POW}　POW判定\n2LH+{INT}　INT判定\n");
-		commands = commands.concat("PCT{CR}　消耗表：體力\nECT{CR}　消耗表：氣力\nGCT{CR}　消耗表：物品\nCCT{CR}　消耗表：金錢\nCTRS{CR}　財寶表：金錢\nMTRS{CR}　財寶表：魔法素材\nITRS{CR}　財寶表：賣錢道具");
+		commands = commands.concat("PCT{CR}　消耗表：體力\nECT{CR}　消耗表：氣力\nGCT{CR}　消耗表：物品\nCCT{CR}　消耗表：金錢\nCTRS{CR}　財寶表：金錢\nMTRS{CR}　財寶表：魔法素材\nITRS{CR}　財寶表：賣錢道具\n");
 
+		/*傷害指令*/
+		commands = commands.concat("C(0-{物防})@物理傷害=傷害-承受傷害前行動-物防-減輕-其他\n");
+		commands = commands.concat("C(0-{魔防})@魔法傷害=傷害-承受傷害前行動-魔防-減輕-其他\n");
+
+		/*數值增減指令*/
+		commands = commands.concat(":HP+0@+HP\n");
+		commands = commands.concat(":HP-0@-HP\n");
+		commands = commands.concat(":疲勞+0@+疲勞\n");
+		commands = commands.concat(":疲勞-0@-疲勞\n");
+		commands = commands.concat(":障壁+0@+障壁\n");
+		commands = commands.concat(":障壁-0@-障壁\n");
+		commands = commands.concat(":因果力+0@+因果力\n");
+		commands = commands.concat(":因果力-0@-因果力");
 		jsonData.data.commands = commands;
 	}
 
@@ -246,32 +264,7 @@ function copyToClipboard(text) {
 }
 
 function ConvertToBCDiceCommand(command) {
-	let bcdiceCommand = command;
-
-	/*D轉LH*/
-	let diceRegex = /(d|D)/;
-	bcdiceCommand = bcdiceCommand.replace(diceRegex, "LH");
-
-	let bcdiceRegex = /^(\d+)(lh|LH)(\+\d+)*$/;
-	let result = bcdiceCommand.match(bcdiceRegex);
-	if (result != null) {
-		return bcdiceCommand;
-	}
-
-	/*前後對調*/
-	let regex = /^((\d+)(\+))?(\d+)(lh|LH)$/;
-	result = bcdiceCommand.match(regex);
-	if (result != null) {
-		let bcdiceCommand = "";
-		let concatIndex = [4, 5, 3, 2];
-		concatIndex.forEach(index => {
-			if (index < result.length && result[index] != null && result[index] != undefined) {
-				bcdiceCommand = bcdiceCommand.concat(result[index]);
-			}
-
-		});
-		return bcdiceCommand;
-	}
-
+	let diceRegex = /^((\d+\+)*)((\d+)[d|D]6?)(\+((\d\+?)*\d))?$/;
+	let bcdiceCommand = command.replace(diceRegex, "$4LH+$1$6");
 	return bcdiceCommand;
 }
