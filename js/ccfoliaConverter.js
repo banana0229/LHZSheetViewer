@@ -236,8 +236,8 @@ function ConvertToCcfolia() {
 		commands = commands.concat("PCT{CR}　消耗表：體力\nECT{CR}　消耗表：氣力\nGCT{CR}　消耗表：物品\nCCT{CR}　消耗表：金錢\nCTRS{CR}　財寶表：金錢\nMTRS{CR}　財寶表：魔法素材\nITRS{CR}　財寶表：賣錢道具\n");
 
 		/*傷害指令*/
-		commands = commands.concat("C(0-{物防}) @物理傷害=傷害-承受傷害前行動-物防-減輕-其他\n");
-		commands = commands.concat("C(0-{魔防}) @魔法傷害=傷害-承受傷害前行動-魔防-減輕-其他\n");
+		commands = commands.concat("C(0-{物防})　物理傷害@=傷害-承受傷害前行動-物防-減輕-其他\n");
+		commands = commands.concat("C(0-{魔防})　魔法傷害@=傷害-承受傷害前行動-魔防-減輕-其他");
 
 		jsonData.data.commands = commands;
 	}
