@@ -202,16 +202,24 @@ function datafill(chardata) {
 		}
 
 		//根據語言動態載入不同的基本動作
-		var dataPath = jpPath;
-		if(Language === zh){
-			dataPath = zhPath;
-		}
 		if (isShowBasicAction == true) {
 			//暫定顯示
-			readTranslataionJSON(dataPath, basicActionFileName, "basicActions", testBasicActionDict);
+			var dataPath = jpPath;
+			var tempBasicActionDict = {};
+			if(Language === jp){
+				dataPath = jpPath;
+				readTranslataionJSON(dataPath, basicActionFileName, "basicActions", jpBasicActionDict);
+				tempBasicActionDict = jpBasicActionDict;
+			}
+			else if(Language === zh){
+				dataPath = zhPath;
+				readTranslataionJSON(dataPath, basicActionFileName, "basicActions", zhBasicActionDict);
+				tempBasicActionDict = zhBasicActionDict;
+			}
+			//readTranslataionJSON(dataPath, basicActionFileName, "basicActions", testBasicActionDict);
 			let i = 0;
-			for (let key in testBasicActionDict) {
-				let actioinData = testBasicActionDict[key];
+			for (let key in tempBasicActionDict) {
+				let actioinData = tempBasicActionDict[key];
 				if (actioinData != null) {
 					let line = '<tr class="skill_tr" id="basicAction_' + i + '"><td class="strings">' + actioinData["name"] + write_skill(actioinData) + '</td> <td class="enum">' + actioinData["timing"]
 						+ '</td> <td class="nump">' + actioinData["skill_rank"] + '/' + actioinData["skill_max_rank"] + '</td></tr> '

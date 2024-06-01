@@ -14,6 +14,8 @@ var zhItemDict = {};
 var zhSkillDict = {};
 var zhBasicActionDict = {};
 var zhPrefixedEffectDict = {};
+var zhBasicActionDict = {};
+var jpBasicActionDict = {};
 var testBasicActionDict = {};
 
 var Language = 0;
@@ -31,7 +33,7 @@ function Test() {
     let zhEffectData = GetPrefixedEffectData(testEffectID)
     console.log(zhEffectData["name"]);
     console.log(zhEffectData["function"]);
-    readTranslataionJSON("./data/jp/", basicActionFileName, "basicActions", testBasicActionDict);
+    //readTranslataionJSON("./data/jp/", basicActionFileName, "basicActions", testBasicActionDict);
 
     Refresh();
 
