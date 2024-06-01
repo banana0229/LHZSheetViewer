@@ -200,9 +200,15 @@ function datafill(chardata) {
 		if (emp > 0) {
 			document.getElementById("skill_block").insertAdjacentHTML('beforeend', '<tr><td>空きスロット:' + emp + '</td></tr>');
 		}
+
+		//根據語言動態載入不同的基本動作
+		var dataPath = jpPath;
+		if(Language === zh){
+			dataPath = zhPath;
+		}
 		if (isShowBasicAction == true) {
 			//暫定顯示
-			readTranslataionJSON("./data/jp/", basicActionFileName, "basicActions", testBasicActionDict);
+			readTranslataionJSON(dataPath, basicActionFileName, "basicActions", testBasicActionDict);
 			let i = 0;
 			for (let key in testBasicActionDict) {
 				let actioinData = testBasicActionDict[key];

@@ -1,3 +1,6 @@
+const jp = 0;
+const zh = 1;
+
 var zhPath = "./data/zh/";
 var jpPath = "./data/jp/";
 var itemFileName = "items.json";
@@ -12,6 +15,9 @@ var zhSkillDict = {};
 var zhBasicActionDict = {};
 var zhPrefixedEffectDict = {};
 var testBasicActionDict = {};
+
+var Language = 0;
+
 
 function Test() {
     TranslateToZh();
@@ -42,6 +48,7 @@ function Test() {
 };
 
 function TranslateToZh() {
+    Language = zh;
     //skill
     let translateKeys = ["name", "timing", "roll", "target", "range", "cost", "limit", "function", "explain"];
     for (let i = 0; i < currentData["skills"].length; i++) {
