@@ -37,6 +37,8 @@ function openjson() {
 	request.onload = function () {
 		let data = request.response;
 		tmpdata = JSON.parse(JSON.stringify(data));
+		//TODO：選擇語言
+		Language = jp;
 		datafill(tmpdata);
 		document.getElementById("view_char").value = "";
 		document.getElementById("tmp_char").label = "ID:" + document.getElementById("sheet_id").value;
@@ -100,6 +102,8 @@ function select_cr() {
 	let key2 = document.getElementById("cr_list").value;
 	if ((key != "") & (key2 != "")) {
 		tmpdata = null;
+		//TODO：選擇語言
+		Language = jp;
 		datafill(Database[key][key2]);
 	}
 }
