@@ -218,7 +218,7 @@
 {"job_type":"メイン職業特技:施療神官","type":"一般","name":"照護之人(ナイチンゲール)","skill_rank":null,"skill_max_rank":1,"timing":"常駐","roll":"無判定","target":"廣範圍20(選擇)","range":"至近","cost":"－","post":"Book1","limit":"－","tags":[],
   "function":"對象在進行「消耗表：氣力、物品」的擲骰時，可以擲骰２次並從中任選一個作為最終結果。〔取得效果〕你的【最大ＨＰ】＋８。","explain":"戰場中也不忘細心照顧同伴的身影，能夠安撫同伴的情緒。","id":3304},
 {"job_type":"種族特技:ハーフアルヴ","type":"一般","name":"機關操作師(ネイティヴオペレイター)","skill_rank":null,"skill_max_rank":1,"timing":"常駐","roll":"無判定","target":"自身","range":"至近","cost":"－","post":"その他","limit":"－","tags":[],
-  "function":"あなたの［操作判定］に＋１Ｄする。","explain":"あなたは機械や器具など、様々な道具を操作することが得意である。その対象は、馬車の操縦から古代遺跡の防御機構の操作まで、複雑さを問わない。","id":904},
+  "function":"你的［操作判定］＋１Ｄ。","explain":"你擅長操作各種機械和道具。不管是操作馬車還是複雜的古代遺跡機關，對你來說都不是難題。","id":904},
 {"job_type":"種族特技:猫人族","type":"一般","name":"貓的敏捷(猫の敏捷)","skill_rank":null,"skill_max_rank":1,"timing":"常駐","roll":"無判定","target":"自身","range":"至近","cost":"－","post":"Book1","limit":"－","tags":["訓練"],
   "function":"你的【ＤＥＸ基本值】＋４。","explain":"あなたは猫人族の特性である敏捷性を、工夫と才能によって極限まで高めている。","id":1103},
 {"job_type":"種族特技:ドワーフ","type":"戰鬥","name":"ハイウェイガード","skill_rank":null,"skill_max_rank":1,"timing":"常駐","roll":"無判定","target":"自身","range":"至近","cost":"－","post":"その他","limit":"－","tags":[],
