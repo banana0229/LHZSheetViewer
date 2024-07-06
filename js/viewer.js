@@ -246,25 +246,27 @@ function write_item(data) {
 	data["tags"].forEach(tag => {
 		code += '<li class="skillTag">' + tag + '</li>';
 	});
+	let hit =  data["hit"] === 0 ? '-' : ( data["hit"] > 0 ? '+' + data["hit"]  : data["hit"] )
+	let action =  data["action"] === 0 ? '-' : ( data["action"] > 0 ? '+' + data["action"]  : data["action"] )
 	switch (data["type"]) {
 		case "武器":
 			code += '</ul><div class="skillTh2 clear">攻擊力</div><div class="skillTd2">' + data["physical_attack"] + '</div> ' +
 				'<div class="skillTh2">魔力</div><div class="skillTd2">' + data["magic_attack"] + '</div>' +
-				'<div class="skillTh2 clear">命中</div><div class="skillTd2">' + data["hit"] + '</div> ' +
-				'<div class="skillTh2">行動</div><div class="skillTd2">' + data["action"] + '</div>' +
+				'<div class="skillTh2 clear">命中</div><div class="skillTd2">' + hit + '</div> ' +
+				'<div class="skillTh2">行動</div><div class="skillTd2">' + action + '</div>' +
 				'<div class="skillTh2 clear">射程</div><div class="skillTd2">' + data["range"] + '</div> ';
 			break;
 		case "防具":
 		case "盾":
 			code += '</ul><div class="skillTh2 clear">物理防御力</div><div class="skillTd2">' + data["physical_defense"] + '</div> ' +
 				'<div class="skillTh2">魔法防御力</div><div class="skillTd2">' + data["magic_defense"] + '</div>' +
-				'<div class="skillTh2 clear">行動</div><div class="skillTd2">' + data["action"] + '</div> ';
+				'<div class="skillTh2 clear">行動</div><div class="skillTd2">' + action + '</div> ';
 			break;
 		case "補助":
 			code += '</ul><div class="skillTh2 clear">魔力</div><div class="skillTd2" style="width:235px;">' + data["magic_attack"] + '</div>' +
 				'</ul><div class="skillTh2 clear">物理防御力</div><div class="skillTd2">' + data["physical_defense"] + '</div> ' +
 				'<div class="skillTh2">魔法防御力</div><div class="skillTd2">' + data["magic_defense"] + '</div>' +
-				'<div class="skillTh2 clear">行動</div><div class="skillTd2">' + data["action"] + '</div> ';
+				'<div class="skillTh2 clear">行動</div><div class="skillTd2">' + action + '</div> ';
 			break;
 		case "収納":
 			let slot = 0;
