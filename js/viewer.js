@@ -250,7 +250,7 @@ function write_item(data) {
 		case "武器":
 			code += '</ul><div class="skillTh2 clear">攻擊力</div><div class="skillTd2">' + data["physical_attack"] + '</div> ' +
 				'<div class="skillTh2">魔力</div><div class="skillTd2">' + data["magic_attack"] + '</div>' +
-				'<div class="skillTh2 clear">命中</div><div class="skillTd2">' + data["timing"] + '</div> ' +
+				'<div class="skillTh2 clear">命中</div><div class="skillTd2">' + data["hit"] + '</div> ' +
 				'<div class="skillTh2">行動</div><div class="skillTd2">' + data["action"] + '</div>' +
 				'<div class="skillTh2 clear">射程</div><div class="skillTd2">' + data["range"] + '</div> ';
 			break;
@@ -258,13 +258,13 @@ function write_item(data) {
 		case "盾":
 			code += '</ul><div class="skillTh2 clear">物理防御力</div><div class="skillTd2">' + data["physical_defense"] + '</div> ' +
 				'<div class="skillTh2">魔法防御力</div><div class="skillTd2">' + data["magic_defense"] + '</div>' +
-				'<div class="skillTh2 clear">行動</div><div class="skillTd2">' + data["timing"] + '</div> ';
+				'<div class="skillTh2 clear">行動</div><div class="skillTd2">' + data["action"] + '</div> ';
 			break;
 		case "補助":
 			code += '</ul><div class="skillTh2 clear">魔力</div><div class="skillTd2" style="width:235px;">' + data["magic_attack"] + '</div>' +
 				'</ul><div class="skillTh2 clear">物理防御力</div><div class="skillTd2">' + data["physical_defense"] + '</div> ' +
 				'<div class="skillTh2">魔法防御力</div><div class="skillTd2">' + data["magic_defense"] + '</div>' +
-				'<div class="skillTh2 clear">行動</div><div class="skillTd2">' + data["timing"] + '</div> ';
+				'<div class="skillTh2 clear">行動</div><div class="skillTd2">' + data["action"] + '</div> ';
 			break;
 		case "収納":
 			let slot = 0;
