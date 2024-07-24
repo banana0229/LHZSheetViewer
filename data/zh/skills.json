@@ -2,7 +2,7 @@
 {"job_type":"アーキ職業特技:武器攻撃職","type":"一般","name":"身輕如燕(アクロバット)","skill_rank":null,"skill_max_rank":1,"timing":"常駐","roll":"無判定","target":"自身","range":"至近","cost":"－","post":"Book1","limit":"－","tags":[],
   "function":"你的［運動判定］＋１Ｄ。","explain":"あなたは筋力だけに頼らない運動のコツを掴んでいる。","id":2307},
 {"job_type":"メイン職業特技:付与術師","type":"戰鬥","name":"精通星辰(アストラルマスタリー)","skill_rank":null,"skill_max_rank":3,"timing":"常駐","roll":"無判定","target":"自身","range":"至近","cost":"－","post":"Book1","limit":"－","tags":["訓練"],
-  "function":"あなたが行う［精神］タグを持つ攻撃のダメージロールに＋［（ＳＲ）Ｄ］する。","explain":"あなたは〈付与術師〉の特徴の一つである、敵の精神に傷を負わせる魔法や特技に熟達している。","id":4818},
+  "function":"你行使的具有［精神］標籤的攻擊的傷害骰＋［（ＳＲ）Ｄ］。","explain":"你熟習《賦予術師》的特長，專精於造成敵方精神傷害的特技與魔法。","id":4818},
 {"job_type":"共通特技","type":"戰鬥","name":"攻擊專精(アタックマスタリー)","skill_rank":null,"skill_max_rank":5,"timing":"常駐","roll":"無判定","target":"自身","range":"至近","cost":"－","post":"Book1","limit":"－","tags":["訓練"],
   "function":"你的【攻擊力】＋［ＳＲ×２］。","explain":"あなたは普段から、武器の訓練を欠かさない。あなたの攻撃は他の〈冒険者〉より大きな破壊力を誇るだろう。","id":13},
 {"job_type":"種族特技:ハーフアルヴ","type":"戰鬥","name":"分析者(アナライザー)","skill_rank":null,"skill_max_rank":1,"timing":"常駐","roll":"無判定","target":"自身","range":"至近","cost":"－","post":"その他","limit":"－","tags":[],
