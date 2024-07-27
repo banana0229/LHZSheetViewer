@@ -1,4 +1,4 @@
-{"ex_powers":[{"job_type":"共通","type":"EXパワー","name":"アクアジェット","skill_rank":null,"skill_max_rank":0,"timing":"移動動作","roll":"無判定","target":"自身","range":"至近","cost":"-","post":"-","limit":"-","tags":["移動"],
+{"ex_powers":[{"job_type":"共通","type":"EXパワー","name":"アクアジェット","skill_rank":null,"skill_max_rank":0,"timing":"移動動作","roll":"無判定","target":"自身","range":"至近","cost":"-","post":null,"limit":"-","tags":["移動"],
 "function":"あなたは2Sqまで［通常移動］をしてもよい。〔マイナー〕移動開始から終了までに通過するすべてのSqに【水中】および類似効果を持つプロップがある場合、移動距離は＋4Sqされる。","explain":"乗騎の水中での高い機動力を表すＥＸパワー。水中にいる限り、あなたの乗騎に追いつける者はいない。","id":2815},
 {"job_type":"共通","type":"EXパワー","name":"アクアジェット","skill_rank":null,"skill_max_rank":0,"timing":"ムーブ","roll":"判定なし","target":"自身","range":"至近","cost":"-","post":null,"limit":"-","tags":["移動"],
 "function":"あなたは2Sqまで［通常移動］をしてもよい。〔マイナー〕移動開始から終了までに通過するすべてのSqに【水中】および類似効果を持つプロップがある場合、移動距離は＋4Sqされる。","explain":"乗騎の水中での高い機動力を表すＥＸパワー。水中にいる限り、あなたの乗騎に追いつける者はいない。","id":2815
