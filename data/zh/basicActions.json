@@ -31,6 +31,6 @@
       "function":"你進入［隱密］狀態。\n但在你為［高仇恨］，或是受到來自其他角色的［阻止能力］，又或是身上持有ＢＳ的時候，你無法使用這個基本動作。","explain":"","id":15},
     {"job_type":"共通","type":"基本動作","name":"鑑定道具","skill_rank":1,"skill_max_rank":1,"timing":"主要動作","roll":"基本(解析／解析難易度)","target":"見下文","range":"至近","cost":"－","post":"Book1","limit":"－","tags":[],
       "function":"以１個帶有【解析難易度】的道具為對象使用。\n對象進入［已解析］狀態。","explain":"","id":16},
-    {"job_type":"共通","type":"基本動作","name":"閉氣","skill_rank":1,"skill_max_rank":1,"timing":"清除階段","roll":"基本(耐久／見下文)","target":"自身","range":"至近","cost":"－","post":"Book1","limit":"－","tags":[],
+    {"job_type":"共通","type":"基本動作","name":"閉氣","skill_rank":1,"skill_max_rank":1,"timing":"清除階段","roll":"基本(耐久／見下文)","target":"自身","range":"至近","cost":"－","post":"Book2","limit":"－","tags":[],
       "function":"以［要閉氣的回合數ｘ３］為難易度進行判定。〔判定失敗〕你承受［疲勞：【ＳＴＲ基本值】ｘ２］。","explain":"","id":17}
 ]}    

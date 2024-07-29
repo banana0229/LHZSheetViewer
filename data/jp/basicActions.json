@@ -31,6 +31,6 @@
       "function":"あなたは［隠密］状態になる。\nただし、あなたが［ヘイトトップ］の場合、または他のキャラクターの［阻止能力］の対象になっている場合、またはバッドステータスを受けている場合、この基本動作は使用できない。","explain":"","id":15},
     {"job_type":"共通","type":"基本動作","name":"アイテム鑑定","skill_rank":1,"skill_max_rank":1,"timing":"メジャー","roll":"基本（解析／解析難易度）","target":"本文","range":"至近","cost":"－","post":"Book1","limit":"－","tags":[],
       "function":"【解析難易度】を持つアイテム１つを対象とする。\n対象は［解析済］状態になる。","explain":"","id":16},
-    {"job_type":"共通","type":"基本動作","name":"呼吸を止める","skill_rank":1,"skill_max_rank":1,"timing":"クリンナップ","roll":"基本（耐久／本文）","target":"自身","range":"至近","cost":"－","post":"Book1","limit":"－","tags":[],
+    {"job_type":"共通","type":"基本動作","name":"呼吸を止める","skill_rank":1,"skill_max_rank":1,"timing":"クリンナップ","roll":"基本（耐久／本文）","target":"自身","range":"至近","cost":"－","post":"Book2","limit":"－","tags":[],
       "function":"［呼吸を止めているラウンド数×３］を難易度として判定を行なう。〔判定失敗〕［疲労：【ＳＴＲ基本値】×２］を受ける。","explain":"","id":17}
 ]}
