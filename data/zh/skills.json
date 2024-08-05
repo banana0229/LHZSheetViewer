@@ -350,7 +350,7 @@
 {"job_type":"主職業特技:神官","type":"戰鬥","name":"石凝之鏡(石凝の鏡)","skill_rank":null,"skill_max_rank":5,"timing":"設置階段","roll":"無判定","target":"單體","range":"4Sq","cost":"仇恨2","post":"Book2","limit":"場景1次","tags":[],
   "function":"對象獲得［減輕：【ＰＯＷ】×ＳＲ］。這個［減輕］會持續到回合結束為止。","explain":"賦予友軍能反彈災厄的靈鏡守護之力的魔法。僅管只是一時，但這個加護將能排除一切艱難險阻。","id":3621},
 {"job_type":"主職業特技:武士","type":"一般","name":"一馬當先(一騎駆け)","skill_rank":null,"skill_max_rank":3,"timing":"設置階段","roll":"無判定","target":"自身","range":"至近","cost":"仇恨1","post":"Book2","limit":"劇本[SR]次","tags":["準備"],
-  "function":"你的【移動力】＋１。該效果持續到回合結束。","explain":"戦場を誰よりも速く駆け抜け、敵陣へと切り込む特技。一騎駆けこそいくさの華。武士の本懐というものだ。","id":2905},
+  "function":"你的【移動力】＋１。該效果持續到回合結束。","explain":"比誰都快地奔赴戰場、切入敵陣，以一騎之身長驅直入，彷若戰場之花，將武士本色展露無遺。","id":2905},
 {"job_type":"基礎職業特技:武器攻擊職","type":"戰鬥","name":"滲透(インフィルトレイション)","skill_rank":null,"skill_max_rank":3,"timing":"設置階段","roll":"無判定","target":"自身","range":"至近","cost":"－","post":"Book1","limit":"劇本[SR]次","tags":[],
   "function":"你將不會成為［阻止能力］的對象。效果持續到此回合結束。","explain":"仔細觀察敵人的一舉一動，能夠避開妨害並深入敵陣的特技。","id":2202},
 {"job_type":"主職業特技:牧師","type":"戰鬥","name":"治癒祈禱(インヴォークリアクト)","skill_rank":null,"skill_max_rank":1,"timing":"設置階段","roll":"無判定","target":"自身","range":"至近","cost":"－","post":"Book2","limit":"劇本1次","tags":[],
