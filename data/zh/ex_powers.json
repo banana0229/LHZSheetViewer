@@ -1,6 +1,6 @@
 {"ex_powers":[
 {"job_type":"共通","type":"ex power","name":"水噴射(アクアジェット)","skill_rank":null,"skill_max_rank":0,"timing":"移動動作","roll":"無判定","target":"自身","range":"至近","cost":"-","post":"Book2","limit":"-","tags":["移動"],
-"function":"你可以進行２Ｓｑ以下的［通常移動］。〔次要〕從移動開始到結束，若所有經過的Ｓｑ都是與【水中】類似的環境，則移動距離＋４Ｓｑ。","explain":"表示坐騎於水中的高機動力的ex power。水底下，沒有任何人可以追得上你的坐騎。","id":2815
+"function":"你可以進行２Ｓｑ以下的［通常移動］。〔次要〕從移動開始到結束，若所有經過的Ｓｑ都是與【水中】類似的環境，則移動距離＋４Ｓｑ。","explain":"表示坐騎於水中的高機動力的ex power。水底下，沒有人可以追得上你的坐騎。","id":2815
 },
 {"job_type":"共通","type":"ex power","name":"蟲步(インセクトムーブ)","skill_rank":null,"skill_max_rank":0,"timing":"移動動作","roll":"無判定","target":"自身","range":"至近","cost":"-","post":"Book2","limit":"-","tags":["移動"],
 "function":"你可以進行２Ｓｑ以下的［通常移動］。該次移動中你可以無視布景的［高度］。〔次要〕移動距離＋１Ｓｑ。","explain":"活用蟲子的身體構造與空間感，就算面對懸崖峭壁也能毫無問題地前進的ex power。","id":2817
