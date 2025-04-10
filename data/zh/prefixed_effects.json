@@ -19,7 +19,7 @@
 {"rank":1,"name":"鐵身的","required_tag":"","allow_tags":["盾","輕鎧","中鎧"],"function":"你於場景開始時獲得［減輕（至近攻擊）：３］","id":220},
 {"rank":1,"name":"流矢的","required_tag":"","allow_tags":["盾","中鎧","輕鎧"],"function":"你於場景開始時獲得［減輕（至近以外的攻擊）：３］","id":230},
 {"rank":1,"name":"火除けの","required_tag":"","allow_tags":["重鎧","中鎧","輕鎧"],"function":"你於場景開始時獲得［減輕（火焰）：１０］","id":241},
-{"rank":1,"name":"氷除けの","required_tag":"","allow_tags":["重鎧","中鎧","輕鎧"],"function":"你於場景開始時獲得［減輕（韓等）：１０］","id":242},
+{"rank":1,"name":"氷除けの","required_tag":"","allow_tags":["重鎧","中鎧","輕鎧"],"function":"你於場景開始時獲得［減輕（寒冷）：１０］","id":242},
 {"rank":1,"name":"雷除けの","required_tag":"","allow_tags":["重鎧","中鎧","輕鎧"],"function":"你於場景開始時獲得［減輕（電擊）：１０］","id":243},
 {"rank":1,"name":"毒除けの","required_tag":"","allow_tags":["重鎧","中鎧","輕鎧"],"function":"你於場景開始時獲得［減輕（邪毒）：１０］","id":244},
 {"rank":1,"name":"光除けの","required_tag":"","allow_tags":["重鎧","中鎧","輕鎧"],"function":"你於場景開始時獲得［減輕（光輝）：１０］","id":245},
