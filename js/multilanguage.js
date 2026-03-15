@@ -20,31 +20,17 @@ var testBasicActionDict = {};
 
 var Language = 0;
 
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./js/sw.js', { scope: '/' })
+    .then(reg => {
+      console.log('Service Worker registered:', reg);
 
-self.addEventListener('fetch', event => {
-  const url = new URL(event.request.url);
+      // 等 SW 完全激活
+      return navigator.serviceWorker.ready;
+    })
+    .catch(err => console.error('SW registration failed:', err));
+}
 
-  // 只攔截 .enc 檔案
-  if (url.pathname.endsWith('.enc')) {
-    event.respondWith((async () => {
-      const res = await fetch(url.pathname);
-      const buffer = await res.arrayBuffer();
-      const data = new Uint8Array(buffer);
-      
-      // XOR 解密
-      const key = 0xAA;
-      for (let i = 0; i < data.length; i++) data[i] ^= key;
-
-      // 回傳正確 MIME
-      let mime = 'audio/mpeg';
-      if (url.pathname.endsWith('.ogg.enc')) mime = 'audio/ogg';
-      else if (url.pathname.endsWith('.wav.enc')) mime = 'audio/wav';
-      else if (url.pathname.endsWith('.flac.enc')) mime = 'audio/flac';
-
-      return new Response(data, { headers: { 'Content-Type': mime } });
-    })());
-  }
-});
 let this_bgm = new Audio();
 
 function Test() {
