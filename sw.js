@@ -1,5 +1,4 @@
-// XOR 解密
-const key = 0xAA;
+import { decrypt } from './js/decryptor.js';
 
 self.addEventListener('fetch', event => {
   console.log('fetch:'+event.request.url);
@@ -14,8 +13,8 @@ self.addEventListener('fetch', event => {
       const buffer = await res.arrayBuffer();
       const data = new Uint8Array(buffer);
       
-
-      for (let i = 0; i < data.length; i++) data[i] ^= key;
+      //解密
+      data = decrypt(data);
 
       // 回傳正確 MIME
       let mime = 'audio/mpeg';
@@ -23,7 +22,11 @@ self.addEventListener('fetch', event => {
       else if (url.pathname.endsWith('.wav.enc')) mime = 'audio/wav';
       else if (url.pathname.endsWith('.flac.enc')) mime = 'audio/flac';
 
-      return new Response(data, { headers:{ 'Content-Type': mime, 'Cache-Control': 'no-store'}});
+      return new Response(data, { headers:
+        {
+          'Content-Type': mime,
+          'Cache-Control': 'no-store'
+        }});
     })());
   }
 });
