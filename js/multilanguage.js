@@ -21,7 +21,12 @@ var testBasicActionDict = {};
 var Language = 0;
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js', { scope: '/' })
+
+    const currentPath = window.location.pathname;
+    // 取當前目錄作為 scope
+    const dirPath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
+    console.log(dirPath);
+    navigator.serviceWorker.register('./sw.js', { scope: dirPath })
     .then(reg => {
       console.log('Service Worker registered:', reg);
 
