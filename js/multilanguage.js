@@ -21,7 +21,7 @@ var testBasicActionDict = {};
 var Language = 0;
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./js/sw.js', { scope: '/' })
+  navigator.serviceWorker.register('./sw.js', { scope: '/' })
     .then(reg => {
       console.log('Service Worker registered:', reg);
 
