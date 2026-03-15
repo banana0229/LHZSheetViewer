@@ -14,7 +14,7 @@ self.addEventListener('fetch', event => {
       const data = new Uint8Array(buffer);
       
       //解密
-      data = decrypt(data);
+      decrypt(data);
 
       // 回傳正確 MIME
       let mime = 'audio/mpeg';
