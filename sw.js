@@ -23,7 +23,7 @@ self.addEventListener('fetch', event => {
       else if (url.pathname.endsWith('.wav.enc')) mime = 'audio/wav';
       else if (url.pathname.endsWith('.flac.enc')) mime = 'audio/flac';
 
-      return new Response(data, { headers: { 'Content-Type': mime } });
+      return new Response(data, { headers:{ 'Content-Type': mime, 'Cache-Control': 'no-store'}});
     })());
   }
 });
