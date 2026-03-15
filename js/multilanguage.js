@@ -20,34 +20,52 @@ var testBasicActionDict = {};
 
 var Language = 0;
 
-if ('serviceWorker' in navigator) {
-
-    const currentPath = window.location.pathname;
-    // 取當前目錄作為 scope
-    const dirPath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
-    console.log(dirPath);
-    navigator.serviceWorker.register('./sw.js', { scope: dirPath })
-    .then(reg => {
-      console.log('Service Worker registered:', reg);
-
-      // 等 SW 完全激活
-      return navigator.serviceWorker.ready;
-    })
-    .catch(err => console.error('SW registration failed:', err));
-}
-
 let this_bgm = new Audio();
 
-function Test() {
+function decrypt(data) {
+  const key = 0xAA;
+  for (let i = 0; i < data.length; i++)
+  {
+    data[i] ^= key;
+  }
+  return data;
+}
 
+async function LoadEncAudio(file_name) {
+  const res = await fetch(file_name);
+  const buffer = await res.arrayBuffer();
+  const data = new Uint8Array(buffer);
+
+  decrypt(data);
+
+  let mime = 'audio/mpeg';
+  if (file_name.endsWith('.ogg.enc')) mime = 'audio/ogg';
+  else if (file_name.endsWith('.wav.enc')) mime = 'audio/wav';
+  else if (file_name.endsWith('.flac.enc')) mime = 'audio/flac';
+
+  const blob = new Blob([data], { type: mime });
+  return URL.createObjectURL(blob);
+}
+
+function Test() {
     const file_name = "Integral_One.mp3.enc"
 
     this_bgm.loop = true;
     this_bgm.addEventListener("loadedmetadata", async () => {
       this_bgm.play();
     });
-    this_bgm.src = file_name;
-    console.log('play:' + file_name);
+    if (file_name.endsWith('.enc')) {
+        LoadEncAudio(file_name)
+        .then((url) => {
+            this_bgm.src = url;
+        })
+        .catch(err => {
+            console.error("Audio load failed:", err);
+        });
+    }
+    else {
+        this_bgm.src = file_name;
+    }
     
     return;
 
