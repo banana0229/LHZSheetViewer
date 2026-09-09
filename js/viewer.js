@@ -292,7 +292,7 @@ function write_item(data) {
 		case "收納":
 			slot = 0;
 			lim = "";
-			myre = /([0-9０-９]+)個.*［持有物品欄］/giu;
+			myre = /([0-9０-９]+)個[^0-9０-９]*［持有物品欄］/giu;
 			//tmp;
 			while ((tmp = myre.exec(data["function"])) !== null) {
 				slot += toInt(tmp[1]);
