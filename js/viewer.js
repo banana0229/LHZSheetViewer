@@ -263,12 +263,14 @@ function write_item(data) {
 				'<div class="skillTh2 clear">行動</div><div class="skillTd2">' + action + '</div> ';
 			break;
 		case "補助":
+		case "輔助":
 			code += '</ul><div class="skillTh2 clear">魔力</div><div class="skillTd2" style="width:235px;">' + data["magic_attack"] + '</div>' +
 				'</ul><div class="skillTh2 clear">物理防御力</div><div class="skillTd2">' + data["physical_defense"] + '</div> ' +
 				'<div class="skillTh2">魔法防御力</div><div class="skillTd2">' + data["magic_defense"] + '</div>' +
 				'<div class="skillTh2 clear">行動</div><div class="skillTd2">' + action + '</div> ';
 			break;
 		case "収納":
+		case "收納":
 			let slot = 0;
 			let lim = "";
 			let myre = /([0-9]+)/giu;
