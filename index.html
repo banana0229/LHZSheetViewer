@@ -13,11 +13,12 @@
 
 <body ontouchstart="">
 	<p id="src_form"><span class="form">
+		<!--
 			<label>匯入:<input type="file" id="file_input" accept=".lhdb" onchange="openjson_local(this)"></label>
 		</span><span class="form">
 			<input type="button" value="輸出成檔案" onclick="writejson()">
-		</span> <span class="form">
-			<label>ID:<input type="text" id="sheet_id" size="10"></label>
+		--></span> <span class="form">
+			<label>ID：<input type="text" id="sheet_id" size="10"></label>
 			<input type="button" value="從冒險窗口匯入" onclick="openjson()">
 		</span> <span class="form">
 			<select id="view_char" required onchange="select_char()">
