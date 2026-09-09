@@ -270,17 +270,32 @@ function write_item(data) {
 				'<div class="skillTh2 clear">行動</div><div class="skillTd2">' + action + '</div> ';
 			break;
 		case "収納":
-		case "收納":
 			let slot = 0;
 			let lim = "";
-			let myre = /([0-9０-９]+)/giu;
+			let myre = /所持品スロットを([0-9０-９]+)/giu;
 			let tmp;
 			while ((tmp = myre.exec(data["function"])) !== null) {
-				slot += parseInt(tmp[0]);
+				slot += toInt(tmp[1]);
 			}
-			myre = /(［.*］+)専用の所持品スロットを([0-9０-９]+)/giu;
+			myre = /(([\[［]([^\]］]*)[\]］])+)専用の所持品スロットを([0-9０-９]+)/giu;
 			while ((tmp = myre.exec(data["function"])) !== null) {
-				lim += tmp[1].replace(/[［］]/giu, ' ') + " (" + tmp[2] + ") ";
+				lim += tmp[1].replace(/(\]\[)|(］［)/giu, ',').replace(/[［］\[\]]/giu, ' ') + " (" + tmp[4] + ") ";
+			}
+			if (!lim) lim = "\u00A0";
+			code += '</ul><div class="skillTh2 clear">收納限制</div><div class="skillTd2" style="width:235px;">' + lim + '</div>' +
+				'</ul><div class="skillTh2 clear">持有物品欄</div><div class="skillTd2">' + slot + '</div> ';
+			break;
+		case "收納":
+			slot = 0;
+			lim = "";
+			myre = /([0-9０-９]+)個.*［持有物品欄］/giu;
+			tmp;
+			while ((tmp = myre.exec(data["function"])) !== null) {
+				slot += toInt(tmp[1]);
+			}
+			myre = /([0-9０-９]+)個(([\[［]([^\]］]*)[\]］])+)專用的［持有物品欄］/giu;
+			while ((tmp = myre.exec(data["function"])) !== null) {
+				lim += tmp[4].replace(/(\]\[)|(］［)/giu, ',').replace(/[［］\[\]]/giu, ' ') + " (" + tmp[1] + ") ";
 			}
 			if (!lim) lim = "\u00A0";
 			code += '</ul><div class="skillTh2 clear">收納限制</div><div class="skillTd2" style="width:235px;">' + lim + '</div>' +
@@ -398,4 +413,13 @@ function IgnoreInitialItem(items) {
 			}
 		}
 	})
+}
+
+function toInt(str) {
+  return parseInt(
+    str.replace(/[０-９]/g, c =>
+      String.fromCharCode(c.charCodeAt(0) - 0xFF10 + 0x30)
+    ),
+    10
+  );
 }
