@@ -299,7 +299,7 @@ function write_item(data) {
 			}
 			myre = /([0-9０-９]+)個(([\[［]([^\]］]*)[\]］])+)專用的［持有物品欄］/giu;
 			while ((tmp = myre.exec(data["function"])) !== null) {
-				lim += tmp[4].replace(/(\]\[)|(］［)/giu, ',').replace(/[［］\[\]]/giu, ' ') + " (" + tmp[1] + ") ";
+				lim += tmp[1].replace(/(\]\[)|(］［)/giu, ',').replace(/[［］\[\]]/giu, ' ') + " (" + tmp[2] + ") ";
 			}
 			if (!lim) lim = "\u00A0";
 			code += '</ul><div class="skillTh2 clear">收納限制</div><div class="skillTd2" style="width:235px;">' + lim + '</div>' +
