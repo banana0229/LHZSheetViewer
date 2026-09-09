@@ -273,12 +273,12 @@ function write_item(data) {
 		case "收納":
 			let slot = 0;
 			let lim = "";
-			let myre = /([0-9]+)/giu;
+			let myre = /([0-9０-９]+)/giu;
 			let tmp;
 			while ((tmp = myre.exec(data["function"])) !== null) {
 				slot += parseInt(tmp[0]);
 			}
-			myre = /(［.*］+)専用の所持品スロットを([0-9]+)/giu;
+			myre = /(［.*］+)専用の所持品スロットを([0-9０-９]+)/giu;
 			while ((tmp = myre.exec(data["function"])) !== null) {
 				lim += tmp[1].replace(/[［］]/giu, ' ') + " (" + tmp[2] + ") ";
 			}
