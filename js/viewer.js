@@ -248,6 +248,10 @@ function write_item(data) {
 	});
 	let hit =  data["hit"] === 0 ? '-' : ( data["hit"] > 0 ? '+' + data["hit"]  : data["hit"] )
 	let action =  data["action"] === 0 ? '-' : ( data["action"] > 0 ? '+' + data["action"]  : data["action"] )
+	let slot = 0;
+	let lim = "";
+	let myre = "";
+	let tmp = null;
 	switch (data["type"]) {
 		case "武器":
 			code += '</ul><div class="skillTh2 clear">攻擊力</div><div class="skillTd2">' + data["physical_attack"] + '</div> ' +
@@ -270,10 +274,10 @@ function write_item(data) {
 				'<div class="skillTh2 clear">行動</div><div class="skillTd2">' + action + '</div> ';
 			break;
 		case "収納":
-			let slot = 0;
-			let lim = "";
-			let myre = /所持品スロットを([0-9０-９]+)/giu;
-			let tmp;
+			slot = 0;
+			lim = "";
+			myre = /所持品スロットを([0-9０-９]+)/giu;
+			//tmp;
 			while ((tmp = myre.exec(data["function"])) !== null) {
 				slot += toInt(tmp[1]);
 			}
@@ -289,7 +293,7 @@ function write_item(data) {
 			slot = 0;
 			lim = "";
 			myre = /([0-9０-９]+)個.*［持有物品欄］/giu;
-			tmp;
+			//tmp;
 			while ((tmp = myre.exec(data["function"])) !== null) {
 				slot += toInt(tmp[1]);
 			}
