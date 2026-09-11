@@ -92,7 +92,7 @@
 {"job_type":"種族特技:人族","type":"一般","name":"天之贈與(ギフト)","skill_rank":null,"skill_max_rank":1,"timing":"常駐","roll":"無判定","target":"自身","range":"至近","cost":"－","post":"Book1","limit":"－","tags":[],
   "function":"你的【初期因果力】＋２。","explain":"你擁有與生俱來的天賦。這是人族特有，能打破命運扭轉乾坤的才能。","id":301},
 {"job_type":"基礎職業特技:回復職","type":"戰鬥","name":"織術者風格(クローシャー・スタイル)","skill_rank":null,"skill_max_rank":2,"timing":"常駐","roll":"無判定","target":"自身","range":"至近","cost":"－","post":"Book1","limit":"－","tags":["風格"],
-  "function":"你可以裝備［杖］，但可裝備的ＩＲ範圍－２（最低１）。〔ＳＲ２〕移除ＩＲ範圍－２的限制。","explain":"藉由儀禮杖釋放出力量，行使強力魔法的戰鬥風格。","id":2013},
+  "function":"你可以裝備［杖］，但［杖］的可裝備ＩＲ範圍－２（最低１）。〔ＳＲ２〕移除ＩＲ範圍－２的限制。","explain":"藉由儀禮杖釋放出力量，行使強力魔法的戰鬥風格。","id":2013},
 {"job_type":"主職業特技:妖術師","type":"戰鬥","name":"沉著風格(クールキャスト・スタイル)","skill_rank":null,"skill_max_rank":2,"timing":"常駐","roll":"無判定","target":"自身","range":"至近","cost":"－","post":"Book1","limit":"－","tags":["風格"],
   "function":"只有在你的［手部欄位］有１個以上的空位時有效。你的《極化詠唱》《死雲》的仇恨上升值－１（最低０）。〔ＳＲ２〕你可以在跑團前選擇１個［魔法攻擊］的特技，直到劇本結束之前，所選的特技的仇恨上升值－１（最低０）。","explain":"用空出的手來結咒印，用以省略部分魔法詠唱的戰鬥風格。透過這種方式，你能在不引起敵人注意的情況下，行使魔法。","id":4421},
 {"job_type":"共通特技","type":"戰鬥","name":"好水手(グッドセイラー)","skill_rank":null,"skill_max_rank":1,"timing":"常駐","roll":"無判定","target":"自身","range":"至近","cost":"－","post":"Book2","limit":"－","tags":[],
